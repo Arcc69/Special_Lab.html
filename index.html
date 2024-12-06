@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffb6c1; /* Changed to lightpink */
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 15px;
+            border: 3px solid #ff6347; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .greeting {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .toggle-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: skyblue;
+            text-align: left; 
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 id="greeting" class="greeting">Hi, Ma'am!</h1>
+        <button id="toggleButton" class="toggle-button" onclick="toggleMessage()">OPEN</button>
+        <p id="message" class="message">
+           I'm gonna miss you ma'am Roan. You're such an amazing teacher. I understand everything you teach, I really hope you'll be one of my teacher again next semester. Thank you for everything!, advance Merry Christmas and a Happy New Year!
+        </p>
+    </div>
+
+    <script>
+        function toggleMessage() {
+            const message = document.getElementById('message');
+            const button = document.getElementById('toggleButton');
+            const greeting = document.getElementById('greeting');
+
+            if (message.style.display === 'block') {
+                message.style.display = 'none';
+                button.textContent = 'OPEN';
+                greeting.textContent = "Hi, Ma'am";
+            } else {
+                message.style.display = 'block';
+                button.textContent = 'CLOSE';
+                greeting.textContent = "THANK YOU MA'AM!";
+            }
+        }
+    </script>
+</body>
+</html>
